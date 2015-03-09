@@ -26,7 +26,7 @@
             <div class='container'>
                 <h1>Input a whole sentence here</h1>
 
-                <form  action= $TitleCaseGenerator->makeTitleCase() method= "get">
+                <form   method= "get">
                     <div class='form-group'>
                       <label for='words'>Enter a long sentence:</label>
                       <input id='words' name='words' class='form-control' type='text'>
@@ -37,7 +37,9 @@
                 </form>
 
                 <?php $wordss = $_GET['words'];
-                //$final = $TitleCaseGenerator->makeTitleCase($wordss);
+                $website_title_case_generator = new TitleCaseGenerator();
+
+                $final = $website_title_case_generator->makeTitleCase($wordss);
                 echo $final;
                 ?>
 
